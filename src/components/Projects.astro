@@ -1,0 +1,84 @@
+---
+import Javascript from "./icons/Javascript.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import HTML from "./icons/HTML.astro";
+import GitHub from "./icons/GitHub.astro";
+import SASS from "./icons/SASS.astro";
+import C from "./icons/C.astro";
+
+const TAGS = {
+    JAVASCRIPT: {
+        name: "JavaScript",
+        class: "bg-black text-[#f7df1e]",
+        icon: Javascript
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#263e51] text-white",
+        icon: Tailwind
+    },
+    HTML: {
+        name: "HTML",
+        class: "bg-[#e34c26] text-white",
+        icon: HTML
+    },
+    GitHub: {
+        name: "GitHub",
+        class: "bg-black text-white",
+        icon: GitHub
+    },
+    SASS: {
+        name: "SASS",
+        class: "bg-white text-[#cf649a]",
+        icon: SASS
+    },
+    C: {
+        name: "C",
+        class: "bg-[#f34b7d] text-white",
+        icon: C
+    }
+}
+const PROJECTS = [
+    {
+        title: "Currency converter",
+        description: "A simple currency converter app built with JavaScript and Tailwind CSS.",
+        link: "https://lautypale.github.io/currency-converter/",
+        github: "https://github.com/LautyPale/currency-converter",
+        image: "/projects/currency-converter.webp",
+        tags: [TAGS.JAVASCRIPT, TAGS.TAILWIND],
+    },
+    {
+        title: "Twenty One Pilots site",
+        description: "A responsive site built with HTML and SASS.",
+        link: "https://lautypale.github.io/TOP-bio/",
+        github: "https://github.com/LautyPale/TOP-bio",
+        image: "/projects/TOP-bio.webp",
+        tags: [TAGS.JAVASCRIPT, TAGS.SASS],
+    }
+]
+---
+
+{
+    PROJECTS.map(({title, description, tags, link, github, image}) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-orange-400/90 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-2">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-4"/>
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img 
+                class="rounded shadow-2xl shadow-white/10"
+                src={image} 
+                alt={`Project image ${image}`} />
+            <a href={link}>Link</a>
+            <a href={github}>GitHub</a>
+        </article>
+    ))
+}
