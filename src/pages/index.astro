@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+import AboutMe from '../components/AboutMe.astro';
 import Badge from '../components/Badge.astro';
 import SocialPill from '../components/SocialPill.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
@@ -10,6 +12,7 @@ import Experience from '../components/Experience.astro';
 import Briefcase from '../components/icons/Briefcase.astro';
 import CodeIcon from '../components/icons/Code.astro';
 import Projects from '../components/Projects.astro';
+import ProfileCheck from '../components/icons/ProfileCheck.astro';
 
 ---
 
@@ -17,24 +20,27 @@ import Projects from '../components/Projects.astro';
 		description="Portfolio de Lautaro Palena. - Trainee Web Developer and Programmer">
 	<main class="px-4">
 
-		<SectionContainer class="py-44 pb-32">
-			<img 
-			class="rounded-full size-12 mb-4" 
-			src="../src/images/avatar.png" 
-			alt="foto de perfil"
-			>
-			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+
+		<SectionContainer class="py-24 pb-32">
+			<h1 class="text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
 				Lautaro Palena <a 
 					href="https://www.linkedin.com/in/lautaro-palena/"
 					target="_blank"
-					rel="noopener" 
-					class="flex justify-center items-center"
+					rel="noopener noreferrer"
+					class="flex justify-center items-center hover:scale-105 transition"
 					>
-					<Badge>Available for hire</Badge>
+					<Badge>Disponible para trabajar</Badge>
 				</a>
 			</h1>
-			<h2 class="text-xl lg:text-3xl text-wrap max-w-[700px]">
-				<span class="text-orange-400/90"> Programming and Web Developer student</span>. based in<span class="text-sky-300"> Buenos Aires, Argentina </span>
+			<h2 
+				class="text-xl lg:text-3xl text-wrap max-w-[700px]"
+			>
+				<span 
+				class="text-orange-500 dark:text-orange-400"
+				> 
+					Estudiante de Programacion y Desarrollo Web</span>. De<span 
+					class="text-sky-500 dark:text-sky-300"
+					> Buenos Aires, Argentina </span>
 			</h2>
 
 			<nav class="flex gap-4 mt-4 flex-wrap">
@@ -58,18 +64,29 @@ import Projects from '../components/Projects.astro';
 
 		</SectionContainer>
 
+
+		<SectionContainer id="about">
+			<h2 
+				class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-white"
+			>
+			<ProfileCheck class="size-8" />
+				Sobre mí
+			</h2>
+			<AboutMe />
+		</SectionContainer>
+	
 		<SectionContainer id="experience">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80">
 				<Briefcase class="size-7" />
-				Experience
+				Experiencia
 			</h2>
 			<Experience />
 		</SectionContainer>
 
 		<SectionContainer id="projects">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80">
 				<CodeIcon class="size-7" />
-				Projects
+				Projectos
 			</h2>
 			<Projects />
 		</SectionContainer>
