@@ -1,0 +1,32 @@
+---
+    const EXPERIENCE = [
+        {
+            date: 'Current',
+            title: 'Computer Technician and Customer Service',
+            description: 'provide hardware and software maintenance, efficiently resolve technical issues. Manage the inventory of parts, ensure stock availability for repairs.',
+            link: 'https://www.instagram.com/bygamers/'
+        },
+        {
+            date: 'March 2023',
+            title: 'Casino Customer Service',
+            description: 'Work in customer service for a virtual casino, providing support to players through various channels such as live chat and Whatsapp. Assist customers with account inquiries, game rules, and technical issues.'
+        },
+    ]
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">                  
+    
+        {EXPERIENCE.map (({ date, title, description, link }) => (
+            <li class="mb-10 ms-4">
+                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{date}</time>
+                <div class="flex gap-x-2 items-center">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>
+                    {link && <a class="rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:scale-105 transition px-2 py-1" href={link} target="_blank" rel="noopener noreferrer">Link</a>}
+                </div>
+                
+                <p class="mb-4 text-base opacity-80 text-balance">{description}</p>
+            </li>
+        ))}
+</ol>
+

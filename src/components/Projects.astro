@@ -1,0 +1,131 @@
+---
+
+import ReactIcon from './icons/React.astro';
+import HTMLIcon from './icons/HTML.astro';
+import TailwindIcon from './icons/Tailwind.astro';
+import JavaScriptIcon from './icons/JavaScript.astro';
+import FirestoreIcon from './icons/Firebase.astro';
+import CIcon from './icons/C.astro';
+import FilesystemIcon from './icons/Filesystem.astro';
+import API from './icons/API.astro';
+
+const TAGS = {
+  
+  HTML: {
+    name: 'HTML',
+    class: 'bg-[#E34F26] text-white',
+    icon: HTMLIcon,
+  },
+  TAILWIND: {
+    name: 'TailwindCSS',
+    class: 'bg-[#38B2AC]/85 text-white',
+    icon: TailwindIcon,
+  },
+  JAVASCRIPT: {
+    name: 'JavaScript',
+    class: 'bg-[#F7DF1E] text-black',
+    icon: JavaScriptIcon,
+  },
+  REACT: {
+    name: 'React.js',
+    class: 'bg-[#61DBFB]/85 text-white',
+    icon: ReactIcon,
+  },
+  FIRESTORE: {
+    name: 'Firestore',
+    class: 'bg-[#FFCA28] text-black',
+    icon: FirestoreIcon,
+  },
+  C: {
+    name: 'C',
+    class: 'bg-[#A8B9CC]/85 text-white',
+    icon: CIcon,
+  },
+  FILESYSTEM: {
+    name: 'File System',
+    class: 'bg-[#000000] text-white',
+    icon: FilesystemIcon,
+  },
+  API: {
+    name: 'RESTAPI',
+    class: 'bg-[#FF7B08] text-white',
+    icon: API,
+  },
+
+}
+
+const PROJECTS = [
+  {
+    title: 'E-commerce Website',
+    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet adipiscing nec, ultricies sed magna. Cras ultricies mi eu turpis hend rerit fringilla.',
+    link: '#',
+    github: '#',
+    imageSrc: './projects/ecommerce.webp',
+    tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.JAVASCRIPT, TAGS.API],
+  },
+  {
+    title: 'Weather App',
+    description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+    link: '#',
+    github: '#',
+    imageSrc: './projects/weather.webp',
+    tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.JAVASCRIPT, TAGS.API],
+  },
+  {
+    title: 'Currency Converter',
+    description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+    link: '#',
+    github: '#',
+    imageSrc: './projects/currency.webp',
+    tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.REACT, TAGS.FIRESTORE],
+  },
+  {
+    title: 'Basic DB for clients and products',
+    description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+    link: '',
+    github: '',
+    imageSrc: './projects/db.webp',
+    tags: [TAGS.C, TAGS.FILESYSTEM],
+  }
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+  {PROJECTS.map(({ title, description, tags, imageSrc, link, github}) => (
+    <li class="ms-6 mb-8">
+      <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+      <article class="flex flex-row gap-x-4">
+
+        <div class="flex flex-col">
+          <div class="flex pb-4">
+            <h3 class="text-xl font-semibold">{title}</h3>
+            <div class="flex gap-x-2 pl-4">
+              <a class="rounded-full border border-white/10 px-2 py-0.5 bg-white/5 hover:bg-white/10 hover:scale-105 transition" href={github}>Github</a>
+              {link && <a class="rounded-full border border-white/10 px-2 py-0.5 bg-white/5 hover:bg-white/10 hover:scale-105 transition" href={link}>Link</a>}
+            </div>
+          </div>
+          
+          <p class="text-balance mb-3 opacity-80">{description}</p>
+
+          <ul class="flex flex-row gap-x-2">
+            {tags.map((tag) => (
+              <li>
+                <span class={`flex items-center gap-x-2 rounded-full text-sm font-semibold ${tag.class} px-3 py-1`}>
+                  <tag.icon class="size-6" />
+                  {tag.name}
+                </span>
+                
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="flex-shrink-0">
+          <img class="w-72 h-44 rounded-3xl" src={imageSrc} alt={`screenshot of project ${title} `} />
+        </div>
+
+      </article>
+    </li>
+  ))}
+</ol>
+
