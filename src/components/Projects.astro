@@ -57,33 +57,33 @@ const TAGS = {
 const PROJECTS = [
   {
     title: 'E-commerce Website',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet adipiscing nec, ultricies sed magna. Cras ultricies mi eu turpis hend rerit fringilla.',
-    link: '#',
-    github: '#',
+    description: 'This e-commerce platform utilizes Tailwind CSS, ReactJS, and Firebase to create a responsive and interactive user interface. Focusing on performance and usability.',
+    link: 'https://pale-ecommerce-tech.vercel.app/',
+    github: 'https://github.com/LautyPale/ecommerce-test',
     imageSrc: './projects/ecommerce.webp',
-    tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.JAVASCRIPT, TAGS.API],
-  },
-  {
-    title: 'Weather App',
-    description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
-    link: '#',
-    github: '#',
-    imageSrc: './projects/weather.webp',
-    tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.JAVASCRIPT, TAGS.API],
-  },
-  {
-    title: 'Currency Converter',
-    description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
-    link: '#',
-    github: '#',
-    imageSrc: './projects/currency.webp',
     tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.REACT, TAGS.FIRESTORE],
   },
   {
+    title: 'Weather App',
+    description: 'Weather application developed using Tailwind CSS and React, integrated with a Weather API to provide real-time weather updates. It features a clean and intuitive design that allows users to easily search for weather information based on their location, displaying essential details like temperature and forecasts.',
+    link: 'https://paleweather.vercel.app/',
+    github: 'https://github.com/LautyPale/weather',
+    imageSrc: './projects/weather.webp',
+    tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.REACT, TAGS.API],
+  },
+  {
+    title: 'Currency Converter',
+    description: 'This currency converter application is built with Tailwind CSS and Vanilla JavaScript, utilizing a currency API to provide real-time exchange rates. It aims to deliver a simple and efficient user experience, allowing users to easily convert between different currencies.',
+    link: 'https://lautypale.github.io/currency-converter/',
+    github: 'https://github.com/LautyPale/currency-converter',
+    imageSrc: './projects/currency.webp',
+    tags: [TAGS.HTML, TAGS.TAILWIND, TAGS.JAVASCRIPT, TAGS.API],
+  },
+  {
     title: 'Basic DB for clients and products',
-    description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+    description: 'This database management system is designed using the FileSystem module and the C programming language to handle data storage and retrieval. It implements basic functionalities for file operations, emphasizing efficiency and data integrity while providing a clear interface for users.',
     link: '',
-    github: '',
+    github: 'https://github.com/LautyPale/TP-Final-programacion',
     imageSrc: './projects/db.webp',
     tags: [TAGS.C, TAGS.FILESYSTEM],
   }
@@ -99,9 +99,9 @@ const PROJECTS = [
         <div class="flex flex-col">
           <div class="flex pb-4">
             <h3 class="text-xl font-semibold">{title}</h3>
-            <div class="flex gap-x-2 pl-4">
-              <a class="rounded-full border border-white/10 px-2 py-0.5 bg-white/5 hover:bg-white/10 hover:scale-105 transition" href={github}>Github</a>
-              {link && <a class="rounded-full border border-white/10 px-2 py-0.5 bg-white/5 hover:bg-white/10 hover:scale-105 transition" href={link}>Link</a>}
+            <div class="flex gap-x-2 pl-2">
+              <a class="rounded-full border border-white/10 px-2 py-0.5 bg-white/5 hover:bg-white/10 hover:scale-105 transition" href={github} target="_blank" rel="noopener noreferrer">Github</a>
+              {link && <a class="rounded-full border border-white/10 px-2 py-0.5 bg-white/5 hover:bg-white/10 hover:scale-105 transition" href={link} target="_blank" rel="noopener noreferrer">Link</a>}
             </div>
           </div>
           
